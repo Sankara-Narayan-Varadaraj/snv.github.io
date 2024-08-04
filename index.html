@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f0f5;
+        }
+
+        .ribbon {
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .ribbon a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .ribbon .title a {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff9900, #ffe600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-container a, .button-container button {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            color: transparent;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'SF Pro Display', sans-serif;
+            background: linear-gradient(90deg, #007aff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .button-container a:hover, .button-container button:hover {
+            background-color: #f0f0f5;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .contact-buttons {
+            display: none; /* Ensure initially hidden */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: fixed;
+            top: 50%;
+            right: 25%; /* Center within the right half */
+            transform: translateY(-50%);
+        }
+
+        .contact-buttons img {
+            width: 100px;  /* Increased size */
+            height: 100px; /* Increased size */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="ribbon">
+        <div class="title"><a href="index.html">Portfolio</a></div>
+        <div>
+            <a href="#resume">Resume</a>
+            <a href="work_experience.html">Work Experience</a>
+            <a href="projects.html">Projects</a>
+            <a id="contact-link" href="#contact">Contact Me</a>
+        </div>
+    </div>
+    <div class="header" id="header">
+        Sankara Narayan Varadaraj
+    </div>
+    <div class="button-container" id="main-buttons">
+        <a href="path_to_your_resume.pdf" download="Sankara_Narayan_Varadaraj_Resume.pdf">
+            Resume
+        </a>
+        <button onclick="location.href='work_experience.html'">
+            Work Experience
+        </button>
+        <button onclick="location.href='projects.html'">
+            Projects
+        </button>
+        <button id="contact-button">
+            Contact Me
+        </button>
+    </div>
+    <div class="contact-buttons hidden" id="contact-buttons">
+        <img src="./logo/email.png" id="email-button" alt="Email">
+        <img src="./logo/linkedin.png" id="linkedin-button" alt="LinkedIn">
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

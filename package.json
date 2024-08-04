@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "page": "^1.11.6",
+    "three": "^0.166.1"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4",
+    "vite-plugin-string": "^1.2.3"
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f0f5;
+        }
+
+        .ribbon {
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .ribbon a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .ribbon .title a {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 50px; /* Adjust based on the height of the ribbon */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px); /* Adjust based on the height of the ribbon */
+            background-color: rgba(0, 0, 0, 0.95);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .projects-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 100vh; /* Make it longer by adding a bottom margin equal to one viewport height */
+        }
+
+        .projects-title {
+            font-size: 3em;
+            color: gold;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-family: 'SF Pro Display', sans-serif;
+        }
+
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1800px;
+            margin: 20px auto;
+            padding: 0 40px; /* Increased padding to move container towards right */
+        }
+
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            max-width: 45%; /* Limit the width to 45% */
+            align-items: flex-start; /* Align items to the left */
+        }
+
+        .project-name,
+        .details {
+            color: #da9841; /* Sandal color */
+        }
+
+        .project-name {
+            margin-bottom: 20px;
+            word-wrap: break-word;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .details {
+            text-align: left;
+            color: #a09d9d;
+            max-width: 100%; /* Ensure the details section doesn't exceed the left section width */
+            word-wrap: break-word;
+        }
+
+        .details ul {
+            list-style-type: disc;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .slideshow-container {
+            flex: 1;
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 350px; /* Fixed height */
+            margin-right: 80px; /* Add margin to the right */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slideshow-container img,
+        .slideshow-container video {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+
+        .slideshow-container img.active,
+        .slideshow-container video.active {
+            display: block;
+        }
+
+        .model-container {
+            width: 100%;
+            height: 600px;
+            margin-top: 20px;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .model {
+            width: 100%;
+            height: 100%;
+        }
+
+        .spacer {
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ribbon">
+        <div class="title"><a href="index.html">Portfolio</a></div>
+        <div>
+            <a href="#resume">Resume</a>
+            <a href="work-experience.html">Work Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </div>
+    <div class="overlay" id="projects-overlay">
+        <div class="projects-content" id="projects-content">
+            <div class="projects-title">PROJECTS</div>
+            <!-- Projects content will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
